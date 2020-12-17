@@ -1,0 +1,34 @@
+{
+  "name": "svelte-packagr",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YogliB/svelte-packagr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YogliB/svelte-packagr/issues"
+  },
+  "homepage": "https://github.com/YogliB/svelte-packagr#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "esbuild": "^0.8.23",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "rollup": "^2.35.1",
+    "rollup-plugin-svelte": "^7.0.0",
+    "svelte-preprocess": "^4.6.1"
+  }
+}
