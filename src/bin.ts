@@ -1,12 +1,24 @@
-import mri from "mri";
-import { build } from "esbuild";
+import { build } from 'esbuild';
+import { Arguments } from './models';
+import { getArguments } from './utils';
+import svelte from 'esbuild-svelte';
 
-const argv = process.argv.slice(2);
-const args = mri(argv, {
-  alias: {
-    i: "input",
-    p: "prod",
-  },
-});
+const main = () => {
+	const args: Arguments = getArguments();
 
-console.log(args);
+	build({
+		bundle: true,
+		entryPoints: ['./tests/MyComponent.svelte'],
+		format: 'esm',
+		minify: true,
+		outfile: './tests/index.mjs',
+		platform: 'browser',
+		target: 'esnext',
+		plugins: [svelte({ compileOptions: { dev: false, css: true } })],
+	}).catch((error) => {
+		console.error(error);
+		process.exit(1);
+	});
+};
+
+main();
