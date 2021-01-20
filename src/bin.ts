@@ -3,8 +3,9 @@ import { Arguments } from './models';
 import { getArguments } from './utils';
 import svelte from 'esbuild-svelte';
 
-const main = () => {
+const main = async () => {
 	const args: Arguments = getArguments();
+	const svelteConfig = await import('./svelte.config.js');
 
 	build({
 		bundle: true,
