@@ -3,14 +3,15 @@ import { Arguments } from './models';
 
 export const getArguments = (): Arguments => {
 	const argv = process.argv.slice(2);
-	const args = mri(argv, {
+	const { input, output, preprocess } = mri(argv, {
 		alias: {
 			i: 'input',
 			o: 'output',
+			p: 'preprocess',
 		},
 	});
 
-	return args;
+	return { input, output, preprocess };
 };
 
 export const sveltePreprocessBaseConfig = {

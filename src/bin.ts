@@ -2,12 +2,11 @@ import { build } from 'esbuild';
 import { Arguments } from './models';
 import { getArguments, sveltePreprocessBaseConfig } from './utils';
 import svelte from 'esbuild-svelte';
-import { sveltePreprocess } from 'svelte-preprocess/dist/autoProcess';
+import sveltePreprocess from 'svelte-preprocess';
 import { preprocessComponents } from './preprocess';
-const sveltePreprocessConfig = require('./svelte-preprocess.config');
 
 const main = async () => {
-	const { output, input }: Arguments = getArguments();
+	const { input, output, preprocess, config }: Arguments = getArguments();
 	const sourceDirectory = input
 		?.trim()
 		?.split('/')
@@ -15,21 +14,25 @@ const main = async () => {
 		?.slice(1)
 		?.reverse()
 		?.join();
+	const preprocessConfig: object = config?.trim() ? await import(config) : {};
 
 	if (!input?.trim()) {
 		console.error('Input file missing');
 		process.exit(1);
 	}
 
-	buildFiles(input, 'esm', output || '.');
-	buildFiles(input, 'cjs', output || '.');
-	preprocessComponents(sourceDirectory, output || './');
+	buildFiles(input, 'esm', output || '.', preprocessConfig);
+	buildFiles(input, 'cjs', output || '.', preprocessConfig);
+
+	if (preprocess !== false)
+		preprocessComponents(sourceDirectory, output || './', preprocessConfig);
 };
 
 const buildFiles = (
 	entryPoint: string,
 	format: 'esm' | 'cjs',
 	destinationDirectory: string,
+	preprocessConfig: any,
 ) => {
 	try {
 		const outfile = `${destinationDirectory}/${
@@ -49,7 +52,7 @@ const buildFiles = (
 					compileOptions: { dev: false, css: true },
 					preprocessor: sveltePreprocess({
 						...sveltePreprocessBaseConfig,
-						...(sveltePreprocessConfig || {}),
+						...preprocessConfig,
 					}),
 				}),
 			],
