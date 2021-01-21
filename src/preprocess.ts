@@ -45,7 +45,7 @@ export const preprocessComponents = (srcDir: string, destDir: string) => {
 	});
 };
 
-const parseSvelte = async (source, destination) => {
+const parseSvelte = async (source: string, destination: string) => {
 	try {
 		const item = await preprocess(
 			source,
@@ -55,7 +55,7 @@ const parseSvelte = async (source, destination) => {
 			}),
 			{
 				filename: path.basename(destination),
-			}
+			},
 		);
 
 		// write compiled code to dist file

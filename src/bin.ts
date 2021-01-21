@@ -7,7 +7,7 @@ import { preprocessComponents } from './preprocess';
 const sveltePreprocessConfig = require('./svelte-preprocess.config');
 
 const main = async () => {
-	const { dest, input }: Arguments = getArguments();
+	const { output, input }: Arguments = getArguments();
 	const sourceDirectory = input
 		?.trim()
 		?.split('/')
@@ -21,18 +21,18 @@ const main = async () => {
 		process.exit(1);
 	}
 
-	buildFiles(input, 'esm', dest || '.');
-	buildFiles(input, 'cjs', dest || '.');
-	preprocessComponents(sourceDirectory, dest || './');
+	buildFiles(input, 'esm', output || '.');
+	buildFiles(input, 'cjs', output || '.');
+	preprocessComponents(sourceDirectory, output || './');
 };
 
 const buildFiles = (
 	entryPoint: string,
 	format: 'esm' | 'cjs',
-	distDir: string
+	destinationDirectory: string,
 ) => {
 	try {
-		const outfile = `${distDir}/${
+		const outfile = `${destinationDirectory}/${
 			format === 'cjs' ? 'index.js' : 'index.mjs'
 		}`;
 

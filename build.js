@@ -7,7 +7,7 @@ const importPathPlugin = {
 			{ filter: /^\.\/svelte-preprocess.config$/ },
 			(args) => {
 				return { path: args.path, external: true };
-			}
+			},
 		);
 	},
 };
@@ -18,12 +18,10 @@ build({
 		'autoprefixer',
 		'esbuild-svelte',
 		'esbuild',
-		'glob',
-		'mri',
 		'svelte-preprocess',
 	],
 	format: 'cjs',
-	// minify: true,
+	minify: true,
 	outfile: './bin.js',
 	platform: 'node',
 	target: 'node10',
