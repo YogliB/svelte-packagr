@@ -1,8 +1,9 @@
 {
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "resolveJsonModule": true
-  }
+	"extends": "@tsconfig/node14/tsconfig.json",
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"resolveJsonModule": true
+	}
 }
