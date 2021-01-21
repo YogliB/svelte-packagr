@@ -1,6 +1,6 @@
 import { build } from 'esbuild';
 import { Arguments } from './models';
-import { getArguments } from './utils';
+import { getArguments, sveltePreprocessBaseConfig } from './utils';
 import svelte from 'esbuild-svelte';
 import { sveltePreprocess } from 'svelte-preprocess/dist/autoProcess';
 import { preprocessComponents } from './preprocess';
@@ -8,7 +8,13 @@ const sveltePreprocessConfig = require('./svelte-preprocess.config');
 
 const main = async () => {
 	const { dest, input }: Arguments = getArguments();
-const destinationDirectory = ;
+	const sourceDirectory = input
+		?.trim()
+		?.split('/')
+		?.reverse()
+		?.slice(1)
+		?.reverse()
+		?.join();
 
 	if (!input?.trim()) {
 		console.error('Input file missing');
@@ -17,7 +23,7 @@ const destinationDirectory = ;
 
 	buildFiles(input, 'esm', dest || '.');
 	buildFiles(input, 'cjs', dest || '.');
-	preprocessComponents('', dest || './');
+	preprocessComponents(sourceDirectory, dest || './');
 };
 
 const buildFiles = (
@@ -42,10 +48,7 @@ const buildFiles = (
 				svelte({
 					compileOptions: { dev: false, css: true },
 					preprocessor: sveltePreprocess({
-						babel: true,
-						postcss: {
-							plugins: [require('autoprefixer')],
-						},
+						...sveltePreprocessBaseConfig,
 						...(sveltePreprocessConfig || {}),
 					}),
 				}),

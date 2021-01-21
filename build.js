@@ -14,7 +14,14 @@ const importPathPlugin = {
 build({
 	bundle: true,
 	entryPoints: ['./src/bin.ts'],
-	external: ['esbuild-svelte', 'esbuild', 'glob', 'mri', 'svelte-preprocess'],
+	external: [
+		'autoprefixer',
+		'esbuild-svelte',
+		'esbuild',
+		'glob',
+		'mri',
+		'svelte-preprocess',
+	],
 	format: 'cjs',
 	// minify: true,
 	outfile: './bin.js',

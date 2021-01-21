@@ -6,9 +6,29 @@ export const getArguments = (): Arguments => {
 	const args = mri(argv, {
 		alias: {
 			i: 'input',
-			d: 'dest',
+			o: 'output',
 		},
 	});
 
 	return args;
+};
+
+export const sveltePreprocessBaseConfig = {
+	babel: {
+		presets: [
+			[
+				'@babel/preset-env',
+				{
+					loose: true,
+					modules: false,
+					targets: {
+						esmodules: true,
+					},
+				},
+			],
+		],
+	},
+	postcss: {
+		plugins: [require('autoprefixer')],
+	},
 };

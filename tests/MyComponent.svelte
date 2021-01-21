@@ -1,8 +1,11 @@
 <script>
 	/** @type {string} */
-	export var name = 'World';
+	export const name = 'World';
 	/** @type {string} */
-	export var textColor = '#ff3e00';
+	export const textColor = '#ff3e00';
+
+	const a = [];
+	const b = a?.join(',')?.split();
 </script>
 
 <style>

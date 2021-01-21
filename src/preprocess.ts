@@ -1,9 +1,10 @@
-import svelte from 'svelte/compiler';
+import { preprocess } from 'svelte/compiler';
 import sveltePreprocess from 'svelte-preprocess';
 import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
-const svelteConfig = require('./svelte.config');
+import { sveltePreprocessBaseConfig } from './utils';
+const sveltePreprocessConfig = require('./svelte-preprocess.config');
 
 export const preprocessComponents = (srcDir: string, destDir: string) => {
 	// source file paths
@@ -46,9 +47,12 @@ export const preprocessComponents = (srcDir: string, destDir: string) => {
 
 const parseSvelte = async (source, destination) => {
 	try {
-		const item = await svelte.preprocess(
+		const item = await preprocess(
 			source,
-			sveltePreprocess(sveltePreprocessConfig),
+			sveltePreprocess({
+				...sveltePreprocessBaseConfig,
+				...(sveltePreprocessConfig || {}),
+			}),
 			{
 				filename: path.basename(destination),
 			}
