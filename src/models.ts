@@ -1,4 +1,5 @@
 export interface Arguments {
-  prod?: boolean;
-  input: string;
+	dest?: string;
+	input: string;
+	prod?: boolean;
 }

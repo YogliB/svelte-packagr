@@ -1,14 +1,14 @@
-import mri from "mri";
-import { Arguments } from "./models";
+import mri from 'mri';
+import { Arguments } from './models';
 
 export const getArguments = (): Arguments => {
-  const argv = process.argv.slice(2);
-  const args = mri(argv, {
-    alias: {
-      i: "input",
-      p: "prod",
-    },
-  });
+	const argv = process.argv.slice(2);
+	const args = mri(argv, {
+		alias: {
+			i: 'input',
+			d: 'dest',
+		},
+	});
 
-  return args;
+	return args;
 };

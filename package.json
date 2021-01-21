@@ -37,6 +37,7 @@
 	},
 	"dependencies": {
 		"esbuild-svelte": "^0.4.0",
+		"glob": "^7.1.6",
 		"mri": "^1.1.6",
 		"rollup": "^2.35.1",
 		"rollup-plugin-svelte": "^7.0.0",
