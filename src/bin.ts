@@ -4,7 +4,7 @@ import { getArguments, logHelp, sveltePreprocessBaseConfig } from './utils';
 import svelte from 'esbuild-svelte';
 import sveltePreprocess from 'svelte-preprocess';
 import { preprocessComponents } from './preprocess';
-import { log } from 'log-md';
+import { red } from 'chalk';
 
 const main = async () => {
 	const {
@@ -27,10 +27,20 @@ const main = async () => {
 		?.slice(1)
 		?.reverse()
 		?.join();
-	const preprocessConfig: object = config?.trim() ? await import(config) : {};
+	let preprocessConfig: object;
+
+	try {
+		preprocessConfig = config?.trim() ? await import(config) : {};
+	} catch (error) {
+		preprocessConfig = {};
+
+		console.error(
+			red("Couldn't find config file, falling back to defaults."),
+		);
+	}
 
 	if (!input?.trim()) {
-		console.error('Input file missing');
+		console.error(red('Input file missing'));
 		process.exit(1);
 	}
 
