@@ -1,12 +1,25 @@
 import { build } from 'esbuild';
 import { Arguments } from './models';
-import { getArguments, sveltePreprocessBaseConfig } from './utils';
+import { getArguments, logHelp, sveltePreprocessBaseConfig } from './utils';
 import svelte from 'esbuild-svelte';
 import sveltePreprocess from 'svelte-preprocess';
 import { preprocessComponents } from './preprocess';
+import { log } from 'log-md';
 
 const main = async () => {
-	const { input, output, preprocess, config }: Arguments = getArguments();
+	const {
+		help,
+		input,
+		output,
+		preprocess,
+		config,
+	}: Arguments = getArguments();
+
+	if (help) {
+		logHelp();
+		return;
+	}
+
 	const sourceDirectory = input
 		?.trim()
 		?.split('/')
