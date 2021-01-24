@@ -8,10 +8,11 @@ export const getArguments = (): Arguments => {
 	const argv = process.argv.slice(2);
 	const { input, output, preprocess, help } = mri(argv, {
 		alias: {
+			c: 'config',
+			h: 'help',
 			i: 'input',
 			o: 'output',
 			p: 'preprocess',
-			h: 'help',
 		},
 	});
 

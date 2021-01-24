@@ -1,2 +1,5 @@
-node_modules
-dist
+**/.build
+**/build
+**/dist
+**/node_modules
+**/web_modules
