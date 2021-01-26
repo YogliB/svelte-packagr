@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import MyComponent from './MyComponent';
+	import MyComponent from './components/MyComponent.svelte';
 
 	let count = 0;
 	onMount(() => {

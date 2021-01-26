@@ -9,10 +9,24 @@ importers:
       eslint-config-prettier: ^7.0.0
       prettier: ^2.2.1
   apps/example:
+    dependencies:
+      '@material/animation': 9.0.0
+      '@material/base': 9.0.0
+      '@material/button': 9.0.0
+      '@material/density': 9.0.0
+      '@material/elevation': 9.0.0
+      '@material/feature-targeting': 9.0.0
+      '@material/ripple': 9.0.0
+      '@material/rtl': 9.0.0
+      '@material/shape': 9.0.0
+      '@material/theme': 9.0.0
+      '@material/touch-target': 9.0.0
+      '@material/typography': 9.0.0
+      sass: 1.32.5
     devDependencies:
-      '@snowpack/app-scripts-svelte': 2.0.0_svelte@3.31.0
+      '@snowpack/app-scripts-svelte': 2.0.0_sass@1.32.5+svelte@3.31.0
       '@snowpack/plugin-dotenv': 2.0.5
-      '@snowpack/plugin-svelte': 3.5.2_svelte@3.31.0
+      '@snowpack/plugin-svelte': 3.5.2_sass@1.32.5+svelte@3.31.0
       '@snowpack/web-test-runner-plugin': 0.2.1_c05a8cd4e701f8a9467b3ab0943c10ee
       '@testing-library/svelte': 3.0.3_svelte@3.31.0
       '@web/test-runner': 0.12.5
@@ -21,6 +35,18 @@ importers:
       svelte: 3.31.0
       svelte-packagr: link:../../packages/svelte-packagr
     specifiers:
+      '@material/animation': ^9.0.0
+      '@material/base': ^9.0.0
+      '@material/button': ^9.0.0
+      '@material/density': ^9.0.0
+      '@material/elevation': ^9.0.0
+      '@material/feature-targeting': ^9.0.0
+      '@material/ripple': ^9.0.0
+      '@material/rtl': ^9.0.0
+      '@material/shape': ^9.0.0
+      '@material/theme': ^9.0.0
+      '@material/touch-target': ^9.0.0
+      '@material/typography': ^9.0.0
       '@snowpack/app-scripts-svelte': ^2.0.0
       '@snowpack/plugin-dotenv': ^2.0.5
       '@snowpack/plugin-svelte': ^3.5.0
@@ -28,6 +54,7 @@ importers:
       '@testing-library/svelte': ^3.0.0
       '@web/test-runner': ^0.12.0
       chai: ^4.2.0
+      sass: ^1.32.5
       snowpack: ^3.0.1
       svelte: ^3.24.0
       svelte-packagr: latest
@@ -1029,6 +1056,101 @@ packages:
       node: '>= 10.14.2'
     resolution:
       integrity: sha512-fC6QCp7Sc5sX6g8Tvbmj4XUTbyrik0akgRy03yjXbQaBWWNWGE7SGtJk98m0N8nzegD/7SggrUlivxo5ax4KWQ==
+  /@material/animation/9.0.0:
+    dependencies:
+      tslib: 1.14.1
+    dev: false
+    resolution:
+      integrity: sha512-ZsiCrIfn6uRjE+/W50PwxOIFSSMWo/sXgOAXvM/0C6KSEGAyKOBGcVmpMuD2IxJV+EGMwFJVQIwR1zZWues9yQ==
+  /@material/base/9.0.0:
+    dependencies:
+      tslib: 1.14.1
+    dev: false
+    resolution:
+      integrity: sha512-6Oalz/9iJCvivofmb3r5YHwAD1yy4mCHhdNwP2SugTf64qD1H6YUiavWM+OYZFETYT75UCnjMP2pEF9ynAg7VA==
+  /@material/button/9.0.0:
+    dependencies:
+      '@material/density': 9.0.0
+      '@material/elevation': 9.0.0
+      '@material/feature-targeting': 9.0.0
+      '@material/ripple': 9.0.0
+      '@material/rtl': 9.0.0
+      '@material/shape': 9.0.0
+      '@material/theme': 9.0.0
+      '@material/touch-target': 9.0.0
+      '@material/typography': 9.0.0
+    dev: false
+    resolution:
+      integrity: sha512-8cvZJ6ljp9qqOmGHiQKn1fLjbhwG6r2793iEkvueu/eqdf2oD5NF1S45k29VygRfUS0cQ5Z2IV69GYKJv1ogMA==
+  /@material/density/9.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-HXQ0GKiIh4X08H7aEIPl6KOcHIUtpe0bqIxrj3VboTQf4C5wN4qkiLys3GaZsA3guvT/T1fCoQOyAGxOtJEh4w==
+  /@material/dom/9.0.0:
+    dependencies:
+      '@material/feature-targeting': 9.0.0
+      tslib: 1.14.1
+    dev: false
+    resolution:
+      integrity: sha512-SOtGJqav0Gp0efFXl597AesZCuW8Ues1KUyR6fahVoEiP50mq2U3IhL4KdQqMXbQNyYYerl16BVR9n7bfi1a8A==
+  /@material/elevation/9.0.0:
+    dependencies:
+      '@material/animation': 9.0.0
+      '@material/base': 9.0.0
+      '@material/feature-targeting': 9.0.0
+      '@material/theme': 9.0.0
+    dev: false
+    resolution:
+      integrity: sha512-UzpJybgat3tKYlTh8iLjoIO5+pR71mdzmUZQs4fHZ9YXl3A2IS+HyOAqI1tpfTwNfNJRif2GUl95ghJgMawSXw==
+  /@material/feature-targeting/9.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-SKkvI46TxxpTau9fsXJWAXTJXbu6ut5n6wdN5ZX1DHHLY2AR7abBAhDIvNhIcxH65FK8mo7Z63UfvDwy177ttQ==
+  /@material/ripple/9.0.0:
+    dependencies:
+      '@material/animation': 9.0.0
+      '@material/base': 9.0.0
+      '@material/dom': 9.0.0
+      '@material/feature-targeting': 9.0.0
+      '@material/theme': 9.0.0
+      tslib: 1.14.1
+    dev: false
+    resolution:
+      integrity: sha512-hc5oNvknfrv0KsL21dW0eRF85DfyANAI0H/+UmNmf850KwwYO/wbs5FshW+vNYuK9ro9OrC/pS4g6suG6Gh4Jg==
+  /@material/rtl/9.0.0:
+    dependencies:
+      '@material/theme': 9.0.0
+    dev: false
+    resolution:
+      integrity: sha512-3Ey4UqEOhKlkmpUQqiXtQnWTgGpwjTPqmFqh7OEy/V5X/k5QqWAhz7LJRmzqDS69uyBibsdB3tFxAGAi1RrRbA==
+  /@material/shape/9.0.0:
+    dependencies:
+      '@material/feature-targeting': 9.0.0
+      '@material/rtl': 9.0.0
+      '@material/theme': 9.0.0
+    dev: false
+    resolution:
+      integrity: sha512-kcZIBnPk0IRy8LyEIGURXAmtDNQHyySmOjySmsCKQzgXnfUhyNsU2exylkCSfPgJT/AWaclaIIN6x+E5OplvPg==
+  /@material/theme/9.0.0:
+    dependencies:
+      '@material/feature-targeting': 9.0.0
+    dev: false
+    resolution:
+      integrity: sha512-3wpQ00Ho6lD3+aRXUkn1YGii7Hg5ukaOkGq5oLyp7bikS3FTbgX9V6pspRiFckR4CKCbGR5NayIuCt8JwbcFyw==
+  /@material/touch-target/9.0.0:
+    dependencies:
+      '@material/base': 9.0.0
+      '@material/feature-targeting': 9.0.0
+    dev: false
+    resolution:
+      integrity: sha512-pvxp7U3UAlmY+AgeG9IxMlQsAiTOgITREzy4Egumtf1Ale2AQAfgDFGMs2NB1Izn+9vIgko/gHnlWgqHxexwwA==
+  /@material/typography/9.0.0:
+    dependencies:
+      '@material/feature-targeting': 9.0.0
+      '@material/theme': 9.0.0
+    dev: false
+    resolution:
+      integrity: sha512-+zyzGnV73d/RyG681L72hCnhd2fwwS9ErtEa3KESVJxVxKeuaaCpUJVDkOqg1C/e7tNX5n/GiU8KPwRPG2O9Jw==
   /@nodelib/fs.scandir/2.1.3:
     dependencies:
       '@nodelib/fs.stat': 2.0.3
@@ -1080,18 +1202,19 @@ packages:
       rollup: ^1.20.0||^2.0.0
     resolution:
       integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==
-  /@snowpack/app-scripts-svelte/2.0.0_svelte@3.31.0:
+  /@snowpack/app-scripts-svelte/2.0.0_sass@1.32.5+svelte@3.31.0:
     dependencies:
       '@babel/core': 7.12.10
       '@babel/preset-env': 7.12.11_@babel+core@7.12.10
       '@babel/preset-typescript': 7.12.7_@babel+core@7.12.10
       '@snowpack/plugin-dotenv': 2.0.5
-      '@snowpack/plugin-svelte': 3.5.2_8a6af7de477fe88fb4e343cf27714fb6
+      '@snowpack/plugin-svelte': 3.5.2_ebf0561ec586530fb537b0ce0e889ea7
       babel-jest: 26.6.3_@babel+core@7.12.10
       jest-transform-svelte: 2.1.1_svelte@3.31.0
       svelte: 3.31.0
     dev: true
     peerDependencies:
+      sass: '*'
       svelte: ^3.21.0
     resolution:
       integrity: sha512-U30xlKt8LMqAcxS30S1SY7LXkB2Dvc+HOs1zz00T1c0T/znmwcMWSBeIOb1vbbuf4XjxXlbMLQ7hqeHGoKHY1w==
@@ -1102,26 +1225,28 @@ packages:
     dev: true
     resolution:
       integrity: sha512-y54lwYRDpTfDTU3uopHLND0DKIjjyWiYxhvOPfZvC4OpOd7UIRwMdSOd5XLZJPEBJ4BD38lDLiXh+ODfNDqhnQ==
-  /@snowpack/plugin-svelte/3.5.2_8a6af7de477fe88fb4e343cf27714fb6:
+  /@snowpack/plugin-svelte/3.5.2_ebf0561ec586530fb537b0ce0e889ea7:
     dependencies:
       rollup-plugin-svelte: 7.1.0_svelte@3.31.0
       svelte: 3.31.0
       svelte-hmr: 0.12.4_svelte@3.31.0
-      svelte-preprocess: 4.6.1_8a6af7de477fe88fb4e343cf27714fb6
+      svelte-preprocess: 4.6.1_ebf0561ec586530fb537b0ce0e889ea7
     dev: true
     peerDependencies:
       '@babel/core': '*'
+      sass: '*'
       svelte: ^3.21.0
     resolution:
       integrity: sha512-i7OhkIRNt1uJ/y3qpowlU7icjtSgFPIl/GjMmBxhtwoIqHAnowFLh1Ur5G6S36GCFo65ymClnYfEIM/2x1+wPQ==
-  /@snowpack/plugin-svelte/3.5.2_svelte@3.31.0:
+  /@snowpack/plugin-svelte/3.5.2_sass@1.32.5+svelte@3.31.0:
     dependencies:
       rollup-plugin-svelte: 7.1.0_svelte@3.31.0
       svelte: 3.31.0
       svelte-hmr: 0.12.4_svelte@3.31.0
-      svelte-preprocess: 4.6.1_svelte@3.31.0
+      svelte-preprocess: 4.6.1_sass@1.32.5+svelte@3.31.0
     dev: true
     peerDependencies:
+      sass: '*'
       svelte: ^3.21.0
     resolution:
       integrity: sha512-i7OhkIRNt1uJ/y3qpowlU7icjtSgFPIl/GjMmBxhtwoIqHAnowFLh1Ur5G6S36GCFo65ymClnYfEIM/2x1+wPQ==
@@ -1771,7 +1896,6 @@ packages:
     dependencies:
       normalize-path: 3.0.0
       picomatch: 2.2.2
-    dev: true
     engines:
       node: '>= 8'
     resolution:
@@ -1990,7 +2114,6 @@ packages:
     resolution:
       integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==
   /binary-extensions/2.2.0:
-    dev: true
     engines:
       node: '>=8'
     resolution:
@@ -2036,7 +2159,6 @@ packages:
   /braces/3.0.2:
     dependencies:
       fill-range: 7.0.1
-    dev: true
     engines:
       node: '>=8'
     resolution:
@@ -2189,7 +2311,6 @@ packages:
       is-glob: 4.0.1
       normalize-path: 3.0.0
       readdirp: 3.5.0
-    dev: true
     engines:
       node: '>= 8.10.0'
     optionalDependencies:
@@ -2958,7 +3079,6 @@ packages:
   /fill-range/7.0.1:
     dependencies:
       to-regex-range: 5.0.1
-    dev: true
     engines:
       node: '>=8'
     resolution:
@@ -3036,7 +3156,6 @@ packages:
     resolution:
       integrity: sha512-Auw9a4AxqWpa9GUfj370BMPzzyncfBABW8Mab7BGWBYDj4Isgq+cDKtx0i6u9jcX9pQDnswsaaOTgTmA5pEjuQ==
   /fsevents/2.3.1:
-    dev: true
     engines:
       node: ^8.16.0 || ^10.6.0 || >=11.0.0
     optional: true
@@ -3104,7 +3223,6 @@ packages:
   /glob-parent/5.1.1:
     dependencies:
       is-glob: 4.0.1
-    dev: true
     engines:
       node: '>= 6'
     resolution:
@@ -3377,7 +3495,6 @@ packages:
   /is-binary-path/2.1.0:
     dependencies:
       binary-extensions: 2.2.0
-    dev: true
     engines:
       node: '>=8'
     resolution:
@@ -3457,7 +3574,6 @@ packages:
     resolution:
       integrity: sha512-arnXMxT1hhoKo9k1LZdmlNyJdDDfy2v0fXjFlmok4+i8ul/6WlbVge9bhM74OpNPQPMGUToDtz+KXa1PneJxOA==
   /is-extglob/2.1.1:
-    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -3483,7 +3599,6 @@ packages:
   /is-glob/4.0.1:
     dependencies:
       is-extglob: 2.1.1
-    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -3501,7 +3616,6 @@ packages:
     resolution:
       integrity: sha1-JP1iAaR4LPUFYcgQJ2r8fRLXEZU=
   /is-number/7.0.0:
-    dev: true
     engines:
       node: '>=0.12.0'
     resolution:
@@ -4110,7 +4224,6 @@ packages:
     resolution:
       integrity: sha1-GrKLVW4Zg2Oowab35vogE3/mrtk=
   /normalize-path/3.0.0:
-    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -4322,7 +4435,6 @@ packages:
     resolution:
       integrity: sha1-elfrVQpng/kRUzH89GY9XI4AelA=
   /picomatch/2.2.2:
-    dev: true
     engines:
       node: '>=8.6'
     resolution:
@@ -4482,7 +4594,6 @@ packages:
   /readdirp/3.5.0:
     dependencies:
       picomatch: 2.2.2
-    dev: true
     engines:
       node: '>=8.10.0'
     resolution:
@@ -4699,6 +4810,15 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-hhbzAgTIX8O7SHfp2c8/kREfEn4qO/9q8C9beyY6+tvZ87EpoZ3i1RIEvp27YBswnNbY9mWd6paKVmKbAgLfZA==
+  /sass/1.32.5:
+    dependencies:
+      chokidar: 3.5.1
+    dev: false
+    engines:
+      node: '>=8.9.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-kU1yJ5zUAmPxr7f3q0YXTAd1oZjSR1g3tYyv+xu0HZSl5JiNOaE987eiz7wCUvbm4I9fGWGU2TgApTtcP4GMNQ==
   /semver/5.7.1:
     hasBin: true
     resolution:
@@ -4996,56 +5116,6 @@ packages:
       svelte: '>=3.19.0'
     resolution:
       integrity: sha512-txg3Gt9PPxioHN45UO88s5DtNQZ1V5DB9EDpXz29L7WX2HpqPj6w8leD9/eynC4PbTz87bMvxNLdDiR/xdg73g==
-  /svelte-preprocess/4.6.1_8a6af7de477fe88fb4e343cf27714fb6:
-    dependencies:
-      '@babel/core': 7.12.10
-      '@types/pug': 2.0.4
-      '@types/sass': 1.16.0
-      detect-indent: 6.0.0
-      strip-indent: 3.0.0
-      svelte: 3.31.0
-    dev: true
-    engines:
-      node: '>= 9.11.2'
-    peerDependencies:
-      '@babel/core': ^7.10.2
-      coffeescript: ^2.5.1
-      less: ^3.11.3
-      node-sass: '*'
-      postcss: ^7 || ^8
-      postcss-load-config: ^2.1.0
-      pug: ^3.0.0
-      sass: ^1.26.8
-      stylus: ^0.54.7
-      sugarss: ^2.0.0
-      svelte: ^3.23.0
-      typescript: ^3.9.5 || ^4.0.0
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      coffeescript:
-        optional: true
-      less:
-        optional: true
-      node-sass:
-        optional: true
-      postcss:
-        optional: true
-      postcss-load-config:
-        optional: true
-      pug:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      typescript:
-        optional: true
-    requiresBuild: true
-    resolution:
-      integrity: sha512-s7KdhR2pOsffyOzZIMEb315f6pfgeDnOWN47m6YKFeSEx3NMf/79Znc3vuG/Ai79SL/vsi86WDrjFPLGRfDesg==
   /svelte-preprocess/4.6.1_9d5a207313541f38a0d32e5f9ce55ea1:
     dependencies:
       '@babel/core': 7.12.10
@@ -5099,11 +5169,63 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-s7KdhR2pOsffyOzZIMEb315f6pfgeDnOWN47m6YKFeSEx3NMf/79Znc3vuG/Ai79SL/vsi86WDrjFPLGRfDesg==
-  /svelte-preprocess/4.6.1_svelte@3.31.0:
+  /svelte-preprocess/4.6.1_ebf0561ec586530fb537b0ce0e889ea7:
+    dependencies:
+      '@babel/core': 7.12.10
+      '@types/pug': 2.0.4
+      '@types/sass': 1.16.0
+      detect-indent: 6.0.0
+      sass: 1.32.5
+      strip-indent: 3.0.0
+      svelte: 3.31.0
+    dev: true
+    engines:
+      node: '>= 9.11.2'
+    peerDependencies:
+      '@babel/core': ^7.10.2
+      coffeescript: ^2.5.1
+      less: ^3.11.3
+      node-sass: '*'
+      postcss: ^7 || ^8
+      postcss-load-config: ^2.1.0
+      pug: ^3.0.0
+      sass: ^1.26.8
+      stylus: ^0.54.7
+      sugarss: ^2.0.0
+      svelte: ^3.23.0
+      typescript: ^3.9.5 || ^4.0.0
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      coffeescript:
+        optional: true
+      less:
+        optional: true
+      node-sass:
+        optional: true
+      postcss:
+        optional: true
+      postcss-load-config:
+        optional: true
+      pug:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      typescript:
+        optional: true
+    requiresBuild: true
+    resolution:
+      integrity: sha512-s7KdhR2pOsffyOzZIMEb315f6pfgeDnOWN47m6YKFeSEx3NMf/79Znc3vuG/Ai79SL/vsi86WDrjFPLGRfDesg==
+  /svelte-preprocess/4.6.1_sass@1.32.5+svelte@3.31.0:
     dependencies:
       '@types/pug': 2.0.4
       '@types/sass': 1.16.0
       detect-indent: 6.0.0
+      sass: 1.32.5
       strip-indent: 3.0.0
       svelte: 3.31.0
     dev: true
@@ -5243,7 +5365,6 @@ packages:
   /to-regex-range/5.0.1:
     dependencies:
       is-number: 7.0.0
-    dev: true
     engines:
       node: '>=8.0'
     resolution:
@@ -5291,7 +5412,6 @@ packages:
     resolution:
       integrity: sha512-hPlt7ZACERQGf03M253ytLY3dHbGNGrAq9qIHWUY9XHYl1z7wYngSr3OQ5xmui8o2AaxsONxIzjafLUiWBo1Fg==
   /tslib/1.14.1:
-    dev: true
     resolution:
       integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
   /tsscmp/1.0.6:
