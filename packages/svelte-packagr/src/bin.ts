@@ -26,7 +26,8 @@ const main = async () => {
 		?.reverse()
 		?.slice(1)
 		?.reverse()
-		?.join();
+		?.join('/');
+
 	let preprocessConfig: object;
 
 	try {
