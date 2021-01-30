@@ -15,11 +15,9 @@
 	const b = a?.join(',')?.split();
 </script>
 
-<style lang="scss">
-	:global() {
-		@use "@material/button";
-		@include button.core-styles;
-	}
+<style lang="scss" global>
+	@use "@material/button";
+	@include button.core-styles;
 
 	h1 {
 		margin: auto;
