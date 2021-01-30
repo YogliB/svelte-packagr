@@ -1,3 +1,3 @@
 # svelte-packagr
 
-## This is a work-in-progress
+## A simple CLI for building svelte packages
