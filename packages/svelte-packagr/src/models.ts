@@ -3,5 +3,5 @@ export interface Arguments {
 	help?: any;
 	input: string;
 	output?: string;
-	preprocess?: boolean;
+	preprocess?: 'all' | 'svelte' | 'js' | 'none';
 }

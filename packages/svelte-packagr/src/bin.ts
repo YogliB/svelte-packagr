@@ -8,13 +8,13 @@ import { red } from 'chalk';
 
 const main = async () => {
 	const {
+		config,
 		help,
 		input,
 		output,
 		preprocess,
-		config,
 	}: Arguments = getArguments();
-
+	console.log(help);
 	if (help) {
 		logHelp();
 		return;

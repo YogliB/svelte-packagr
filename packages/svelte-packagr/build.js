@@ -22,7 +22,7 @@ build({
 	],
 	format: 'cjs',
 	minify: true,
-	outfile: './dist/bin.js',
+	outfile: './bin.js',
 	platform: 'node',
 	target: 'node10',
 	plugins: [importPathPlugin],

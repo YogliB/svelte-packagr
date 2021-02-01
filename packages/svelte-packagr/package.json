@@ -1,8 +1,8 @@
 {
 	"author": "Yogev Boaron Ben-Har",
 	"bin": {
-		"svelte-packagr": "dist/bin.js",
-		"svp": "dist/bin.js"
+		"svelte-packagr": "bin.js",
+		"svp": "bin.js"
 	},
 	"browserslist": [
 		"defaults"
@@ -57,7 +57,7 @@
 	},
 	"version": "0.0.1",
 	"files": [
-		"dist",
+		"bin.js",
 		"help.md"
 	]
 }
