@@ -14,7 +14,7 @@ const main = async () => {
 		output,
 		preprocess,
 	}: Arguments = getArguments();
-	console.log(help);
+
 	if (help) {
 		logHelp();
 		return;
@@ -48,8 +48,7 @@ const main = async () => {
 	buildFiles(input, 'esm', output || '.', preprocessConfig);
 	buildFiles(input, 'cjs', output || '.', preprocessConfig);
 
-	if (preprocess !== false)
-		preprocessComponents(sourceDirectory, output || './', preprocessConfig);
+	preprocessComponents(sourceDirectory, output || './', preprocessConfig);
 };
 
 const buildFiles = (
