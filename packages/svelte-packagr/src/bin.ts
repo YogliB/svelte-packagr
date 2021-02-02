@@ -12,7 +12,7 @@ const main = async () => {
 		help,
 		input,
 		output,
-		preprocess,
+		preprocess = 'all',
 	}: Arguments = getArguments();
 
 	if (help) {
@@ -45,10 +45,27 @@ const main = async () => {
 		process.exit(1);
 	}
 
-	buildFiles(input, 'esm', output || '.', preprocessConfig);
-	buildFiles(input, 'cjs', output || '.', preprocessConfig);
+	buildFiles(
+		input,
+		'esm',
+		output || '.',
+		preprocessConfig,
+		['none', 'js'].includes(preprocess?.trim()),
+	);
+	buildFiles(
+		input,
+		'cjs',
+		output || '.',
+		preprocessConfig,
+		['none', 'js'].includes(preprocess?.trim()),
+	);
 
-	preprocessComponents(sourceDirectory, output || './', preprocessConfig);
+	preprocessComponents(
+		sourceDirectory,
+		output || './',
+		preprocessConfig,
+		['none', 'js'].includes(preprocess?.trim()),
+	);
 };
 
 const buildFiles = (
@@ -56,6 +73,7 @@ const buildFiles = (
 	format: 'esm' | 'cjs',
 	destinationDirectory: string,
 	preprocessConfig: any,
+	avoidPreprocess: boolean,
 ) => {
 	try {
 		const outfile = `${destinationDirectory}/${
@@ -73,10 +91,12 @@ const buildFiles = (
 			plugins: [
 				svelte({
 					compileOptions: { dev: false, css: true },
-					preprocessor: sveltePreprocess({
-						...sveltePreprocessBaseConfig,
-						...preprocessConfig,
-					}),
+					preprocessor: avoidPreprocess
+						? undefined
+						: sveltePreprocess({
+								...sveltePreprocessBaseConfig,
+								...preprocessConfig,
+						  }),
 				}),
 			],
 		});

@@ -1,20 +1,21 @@
 import { preprocess } from 'svelte/compiler';
 import sveltePreprocess from 'svelte-preprocess';
-import fs from 'fs';
-import path from 'path';
+import { lstat, readFile, mkdir, copyFile, writeFile } from 'fs/promises';
+import { join, dirname, basename } from 'path';
 import glob from 'glob';
 import { sveltePreprocessBaseConfig } from './utils';
 
 export const preprocessComponents = (
 	srcDir: string,
 	destDir: string,
-	preprocessConfig: any,
+	preprocessConfig: { [key: string]: any },
+	avoidPreprocess: boolean,
 ) => {
 	// source file paths
-	const srcPath = path.join(__dirname, srcDir);
+	const srcPath = join(__dirname, srcDir);
 
 	// read glob of files in directory
-	glob(path.join(srcPath, '**/*'), {}, async (error, files) => {
+	glob(join(srcPath, '**/*'), {}, async (error, files) => {
 		// handling error
 		if (error) {
 			console.error('Unable to scan directory: ' + error);
@@ -23,26 +24,26 @@ export const preprocessComponents = (
 
 		// listing all files using forEach
 		for (const file of files) {
-			if (fs.lstatSync(file).isDirectory()) continue;
+			if ((await lstat(file)).isDirectory()) continue;
 
 			// load file
-			const sourceFile = fs.readFileSync(file, 'utf-8');
+			const sourceFile = await readFile(file, 'utf-8');
 			const distFile = file.replace(`/${srcDir}/`, `/${destDir}/`);
 
 			// create directory and file
-			fs.mkdirSync(path.dirname(distFile), {
+			mkdir(dirname(distFile), {
 				recursive: true,
 			});
 
 			// process .svelte file
-			if (file.endsWith('.svelte')) {
+			if (file.endsWith('.svelte') && !avoidPreprocess) {
 				// run autopreprocessor
 				await parseSvelte(sourceFile, distFile, preprocessConfig);
 			}
 			// copy other files
 			else {
 				// copy static files
-				fs.copyFileSync(file, distFile);
+				await copyFile(file, distFile);
 			}
 		}
 	});
@@ -61,12 +62,12 @@ const parseSvelte = async (
 				...preprocessConfig,
 			}),
 			{
-				filename: path.basename(destination),
+				filename: basename(destination),
 			},
 		);
 
 		// write compiled code to dist file
-		fs.writeFileSync(destination, item.code);
+		await writeFile(destination, item.code);
 	} catch (error) {
 		console.error(error);
 	}
