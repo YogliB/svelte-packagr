@@ -76,6 +76,9 @@ const buildFiles = (
 	avoidPreprocess: boolean,
 ) => {
 	try {
+		if (format === 'cjs') console.info('Building js file...');
+		if (format === 'esm') console.info('Building mjs file...');
+
 		const outfile = `${destinationDirectory}/${
 			format === 'cjs' ? 'index.js' : 'index.mjs'
 		}`;

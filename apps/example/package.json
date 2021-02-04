@@ -32,7 +32,7 @@
 	"private": true,
 	"scripts": {
 		"build": "snowpack build",
-		"build:lib": "svp -i src/components/MyComponent.svelte -o dist --preprocess=true",
+		"build:lib": "svp -i src/components/MyComponent.svelte -o dist",
 		"start": "snowpack dev",
 		"test": "web-test-runner \"src/**/*.test.js\"",
 		"svp": "svelte-packagr -h"

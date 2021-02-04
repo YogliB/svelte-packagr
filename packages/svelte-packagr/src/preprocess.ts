@@ -11,11 +11,11 @@ export const preprocessComponents = (
 	preprocessConfig: { [key: string]: any },
 	avoidPreprocess: boolean,
 ) => {
-	// source file paths
-	const srcPath = join(__dirname, srcDir);
+	if (avoidPreprocess) console.info('Coping files...');
+	if (!avoidPreprocess) console.info('Preprocessing files...');
 
 	// read glob of files in directory
-	glob(join(srcPath, '**/*'), {}, async (error, files) => {
+	glob(join(srcDir, '**/*'), {}, async (error, files) => {
 		// handling error
 		if (error) {
 			console.error('Unable to scan directory: ' + error);
@@ -28,7 +28,7 @@ export const preprocessComponents = (
 
 			// load file
 			const sourceFile = await readFile(file, 'utf-8');
-			const distFile = file.replace(`/${srcDir}/`, `/${destDir}/`);
+			const distFile = file.replace(srcDir, destDir);
 
 			// create directory and file
 			mkdir(dirname(distFile), {
