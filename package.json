@@ -16,7 +16,7 @@
 	"private": true,
 	"scripts": {
 		"build:lib": "cd ./packages/svelte-packagr && pnpm build",
-		"publish": "cd ./packages/svelte-packagr && pnpm publish",
+		"publish:lib": "cd ./packages/svelte-packagr && pnpm publish",
 		"start": "cd ./apps/example && pnpm start"
 	},
 	"version": "0.0.1"
