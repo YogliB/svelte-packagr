@@ -2,6 +2,8 @@
 
 ## A simple CLI for building svelte packages
 
+## Disclaimer: Notice we didn't hit version 1 just yet, and the API may change
+
 ### Instalation
 
 ```bash
