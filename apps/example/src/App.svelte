@@ -1,5 +1,5 @@
 <script>
-	import Button from './components/Button.svelte';
+	import { Button } from './components';
 	import { onMount } from 'svelte';
 
 	let count = 0;
