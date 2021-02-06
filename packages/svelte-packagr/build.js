@@ -11,6 +11,7 @@ const importPathPlugin = {
 		);
 	},
 };
+
 build({
 	bundle: true,
 	entryPoints: ['./src/bin.ts'],
