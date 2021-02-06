@@ -53,7 +53,8 @@
 		"url": "git+https://github.com/YogliB/svelte-packagr.git"
 	},
 	"scripts": {
-		"build": "node build"
+		"build": "node build",
+		"prepublishOnly": "pnpm build"
 	},
 	"version": "0.0.1",
 	"files": [
