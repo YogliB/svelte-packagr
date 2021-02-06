@@ -4,6 +4,10 @@
 
 ## Disclaimer: Notice we didn't hit version 1 just yet, and the API may change
 
+[![npm package version](https://badgen.net/npm/v/svelte-packagr)](https://npm.im/svelte-packagr)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](code-of-conduct.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
 ### Instalation
 
 ```bash
