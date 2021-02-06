@@ -1,6 +1,6 @@
 <script>
+	import Button from './components/Button.svelte';
 	import { onMount } from 'svelte';
-	import MyComponent from './components/MyComponent.svelte';
 
 	let count = 0;
 	onMount(() => {
@@ -10,6 +10,26 @@
 		};
 	});
 </script>
+
+<div class="App">
+	<header class="App-header">
+		<img src="/logo.svg" class="App-logo" alt="logo" />
+		<p>Edit <code>src/App.svelte</code> and save to reload.</p>
+		<p>Page has been open for <code>{count}</code> seconds.</p>
+		<p>
+			<Button>
+				<a
+					class="App-link"
+					href="https://svelte.dev"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Learn Svelte
+				</a>
+			</Button>
+		</p>
+	</header>
+</div>
 
 <style>
 	:global(body) {
@@ -56,22 +76,3 @@
 		}
 	}
 </style>
-
-<div class="App">
-	<header class="App-header">
-		<img src="/logo.svg" class="App-logo" alt="logo" />
-		<p>Edit <code>src/App.svelte</code> and save to reload.</p>
-		<p>Page has been open for <code>{count}</code> seconds.</p>
-		<p>
-			<a
-				class="App-link"
-				href="https://svelte.dev"
-				target="_blank"
-				rel="noopener noreferrer">
-				Learn Svelte
-			</a>
-		</p>
-	</header>
-</div>
-
-<MyComponent />
