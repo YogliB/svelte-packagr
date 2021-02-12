@@ -1,0 +1,29 @@
+{
+	"author": "TODO",
+	"browserslist": [
+		"defaults"
+	],
+	"description": "TODO",
+	"devDependencies": {
+		"@babel/core": "^7.12.13",
+		"@babel/preset-env": "^7.12.13",
+		"autoprefixer": "^10.2.4",
+		"postcss": "^8.2.5",
+		"postcss-load-config": "^3.0.1",
+		"svelte-packagr": "workspace:^0.0.1"
+	},
+	"keywords": [
+		"svelte",
+		"components",
+		"library"
+	],
+	"license": "TODO",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"name": "my-library",
+	"scripts": {
+		"build": "svp -i ./src/index.js -o dist --config"
+	},
+	"svelte": "dist/lib/index.js",
+	"version": "1.0.0"
+}
