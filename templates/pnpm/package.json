@@ -14,7 +14,7 @@
 		"svelte": "^3.24.0",
 		"svelte-packagr": "latest"
 	},
-	"name": "template",
+	"name": "@templates/pnpm",
 	"scripts": {
 		"build:lib": "pnpm run build --filter my-library",
 		"start": "snowpack dev",

@@ -17,7 +17,7 @@
 	"scripts": {
 		"build:lib": "cd ./packages/svelte-packagr && pnpm build",
 		"publish:lib": "cd ./packages/svelte-packagr && pnpm publish",
-		"start": "cd ./apps/example && pnpm start"
+		"start:pnpm": "pnpm start --filter @templates/pnpm"
 	},
 	"version": "0.0.1"
 }
