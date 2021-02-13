@@ -1,1 +1,3 @@
-export { default as MyComponent } from './components/MyComponent.svelte';
+import { default as MyComponent } from './components/MyComponent.svelte';
+
+export { MyComponent };
