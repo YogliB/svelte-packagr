@@ -4,5 +4,9 @@ module.exports = {
 	mount: {
 		public: { url: '/', static: true },
 		src: { url: '/dist' },
+		packages: { url: '/packages' },
+	},
+	alias: {
+		'my-library': './packages/my-library/src/index.js',
 	},
 };

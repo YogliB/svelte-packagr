@@ -15,8 +15,8 @@
 	},
 	"private": true,
 	"scripts": {
-		"build:lib": "cd ./packages/svelte-packagr && pnpm build",
-		"publish:lib": "cd ./packages/svelte-packagr && pnpm publish",
+		"build:lib": "pnpm build --filter svelte-packagr",
+		"publish:lib": "pnpm publish --filter svelte-packagr",
 		"start:pnpm": "pnpm start --filter @templates/pnpm"
 	},
 	"version": "0.0.1"

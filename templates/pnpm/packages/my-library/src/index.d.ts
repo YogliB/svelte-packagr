@@ -1,1 +1,1 @@
-export * from './lib/MyComponent.svelte';
+export { default as MyComponent } from './components/MyComponent.svelte';
