@@ -29,6 +29,9 @@
 		"ts-node": "^9.1.1",
 		"typescript": "^4.1.3"
 	},
+	"files": [
+		"dist"
+	],
 	"homepage": "https://github.com/YogliB/svelte-packagr#readme",
 	"keywords": [
 		"svelte",
@@ -44,16 +47,13 @@
 		"useTabs": true
 	},
 	"repository": {
+		"directory": "packages/svelte-packagr",
 		"type": "git",
 		"url": "git+https://github.com/YogliB/svelte-packagr.git"
 	},
 	"scripts": {
-		"build": "node build",
+		"build": "node build && && tsc --emitDeclarationOnly --outDir dist",
 		"prepublishOnly": "pnpm build"
 	},
-	"version": "0.0.1",
-	"files": [
-		"bin.js",
-		"help.md"
-	]
+	"version": "0.0.1"
 }
