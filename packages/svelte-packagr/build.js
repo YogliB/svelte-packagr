@@ -1,4 +1,5 @@
 const { build } = require('esbuild');
+const { copyFileSync } = require('fs');
 
 const importPathPlugin = {
 	name: 'import-path',
@@ -31,3 +32,5 @@ build({
 	console.error(error);
 	process.exit(1);
 });
+
+copyFileSync('./help.md', './dist/help.md');
