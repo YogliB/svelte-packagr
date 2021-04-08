@@ -1,6 +1,6 @@
 import { build } from 'esbuild';
 import { Arguments } from './models';
-import { getArguments, logHelp, sveltePreprocessBaseConfig } from './utils';
+import { getArguments, logHelp } from './utils';
 import svelte from 'esbuild-svelte';
 import sveltePreprocess from 'svelte-preprocess';
 import { preprocessComponents } from './preprocess';
@@ -14,6 +14,9 @@ const main = async () => {
 		output,
 		preprocess = 'all',
 	}: Arguments = getArguments();
+	let configPath =
+		config === true ? 'svelte.config.js' : config === false ? null : config;
+	console.debug('configPath', configPath);
 
 	if (help) {
 		logHelp();
@@ -31,13 +34,14 @@ const main = async () => {
 	let preprocessConfig: object;
 
 	try {
-		preprocessConfig = config?.trim() ? await import(config) : {};
+		preprocessConfig = configPath?.trim()
+			? await import(process.cwd() + '\\' + configPath)
+			: {};
+		console.debug('preprocessConfig', JSON.stringify(preprocessConfig));
 	} catch (error) {
 		preprocessConfig = {};
 
-		console.error(
-			red("Couldn't find config file, falling back to defaults."),
-		);
+		console.error(red(error));
 	}
 
 	if (!input?.trim()) {
@@ -97,7 +101,6 @@ const buildFiles = (
 					preprocessor: avoidPreprocess
 						? undefined
 						: sveltePreprocess({
-								...sveltePreprocessBaseConfig,
 								...preprocessConfig,
 						  }),
 				}),

@@ -1,5 +1,5 @@
 export interface Arguments {
-	config?: string;
+	config?: boolean | string;
 	help?: any;
 	input: string;
 	output?: string;

@@ -3,7 +3,6 @@ import sveltePreprocess from 'svelte-preprocess';
 import { lstat, readFile, mkdir, copyFile, writeFile } from 'fs/promises';
 import { join, dirname, basename } from 'path';
 import glob from 'glob';
-import { sveltePreprocessBaseConfig } from './utils';
 
 export const preprocessComponents = (
 	srcDir: string,
@@ -58,7 +57,6 @@ const parseSvelte = async (
 		const item = await preprocess(
 			source,
 			sveltePreprocess({
-				...sveltePreprocessBaseConfig,
 				...preprocessConfig,
 			}),
 			{

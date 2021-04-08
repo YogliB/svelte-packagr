@@ -17,8 +17,6 @@ module.exports = {
 				],
 			],
 		},
-		postcss: {
-			plugins: [require('autoprefixer')],
-		},
+		postcss: true,
 	}),
 };

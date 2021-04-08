@@ -6,7 +6,7 @@ import { bold, underline, cyan } from 'chalk';
 
 export const getArguments = (): Arguments => {
 	const argv = process.argv.slice(2);
-	const { input, output, preprocess, help } = mri(argv, {
+	const { config, input, output, preprocess, help } = mri(argv, {
 		alias: {
 			c: 'config',
 			h: 'help',
@@ -16,27 +16,7 @@ export const getArguments = (): Arguments => {
 		},
 	});
 
-	return { input, output, preprocess, help };
-};
-
-export const sveltePreprocessBaseConfig = {
-	babel: {
-		presets: [
-			[
-				'@babel/preset-env',
-				{
-					loose: true,
-					modules: false,
-					targets: {
-						esmodules: true,
-					},
-				},
-			],
-		],
-	},
-	postcss: {
-		plugins: [require('autoprefixer')],
-	},
+	return { config, input, output, preprocess, help };
 };
 
 export const logHelp = () => {
