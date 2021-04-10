@@ -26,10 +26,10 @@ For example: `./dist`
 
 Enables [svelte-preprocess](https://github.com/sveltejs/svelte-preprocess)'s auto preprocessing feature.
 
--   `svelte` - Preprocess only generated `.svelte` files.
--   `js` - Preprocess only generated `.js` and `.mjs` files.
--   `all` - Preprocess both (Default).
--   `none` - Don't preprocess.
+-   `svelte` - Preprocess and generate only raw `.svelte` files.
+-   `js` - Preprocess and generate only `.js` files.
+-   `all` - Preprocess and generate both `.svelte` & `.js` files.
+-   `none` - Only copy files, don't preprocess.
 
 `--config (-c)`
 
