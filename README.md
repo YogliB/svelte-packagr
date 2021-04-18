@@ -1,3 +1,7 @@
+# Frozen
+
+This project is frozen for now, I may or may not return to this in the future.
+
 # svelte-packagr
 
 ## A simple CLI for building svelte packages
